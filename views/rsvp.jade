@@ -1,0 +1,45 @@
+doctype html
+html.no-js(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title=title
+    link(rel='shortcut icon', href='../favicon.ico')
+    link(rel='stylesheet', type='text/css', href='css/normalize.css')
+    link(rel='stylesheet', type='text/css', href='css/demo.css')
+    link(rel='stylesheet', type='text/css', href='css/component.css')
+    link(rel='stylesheet', type='text/css', href='css/cs-select.css')
+    link(rel='stylesheet', type='text/css', href='css/cs-skin-boxes.css')
+    script(src='js/modernizr.custom.js')
+  body
+    .container
+      #fs-form-wrap.fs-form-wrap
+        form#myform.fs-form.fs-form-full(autocomplete='off', method='post', action='/rsvp')
+          ol.fs-fields
+            li
+              label.fs-field-label.fs-anim-upper(for='names') Name of attendee(s)?
+              input#q1.fs-anim-lower(name='names', placeholder='Enter here')
+            li(data-input-trigger='')
+              label.fs-field-label.fs-anim-upper(for='q3', data-info="We'd love to see you!") Will you be attending the #{user.event}?
+              .fs-radio-group.fs-radio-custom.clearfix.fs-anim-lower
+                span
+                  input#q2a(name='attending', required, type='radio', value='yes')
+                  label.radio-conversion(for='q2a') Yes
+                span
+                  input#q2b(name='attending', required, type='radio', value='no')
+                  label.radio-social(for='q2b') No
+            li
+              label.fs-field-label.fs-anim-upper(for='dietary') Any dietary requests or notes?
+              input#q3.fs-anim-lower(name='dietary-needs', placeholder='Describe here')
+            li
+              label.fs-field-label.fs-anim-upper(for='song-request') Do you have a song request?
+              input#q4.fs-anim-lower(name='song-request', placeholder='Describe here')
+            li
+              label.fs-field-label.fs-anim-upper(for='notes') Any other notes?
+              input#q5.fs-anim-lower(name='notes', placeholder='Enter here')
+          button.fs-submit(type='submit') Send answers
+    script(src='js/classie.js')
+    script(src='js/selectFx.js')
+    script(src='js/fullscreenForm.js')
+    script(src='js/rsvp.js')
