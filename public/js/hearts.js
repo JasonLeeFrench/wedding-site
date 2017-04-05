@@ -12,12 +12,7 @@
   var context = canvas.getContext("2d");
   container.append(canvas);
   
-  var timeoutID = setTimeout(function(){
-    createHearts();
-  }, START_TIME);
-  
   $('.hearts-button').click(function(){
-    clearTimeout(timeoutID);
     createHearts();
   });
   
